@@ -39,7 +39,7 @@
 %define centos_rel 9.2009
 %define bridge_version 79
 # Bump this when you need to rebuild the package
-%define bridge_version_rel 1
+%define bridge_version_rel 3
 #define beta Beta
 %define dist .el%{dist_release_version}%{?altarch_suffix}.centos
 
@@ -73,7 +73,7 @@ Source1:        85-display-manager.preset
 Source2:        90-default.preset
 Source99:       update-boot
 Source100:      rootfs-expand
-Patch100:       CIQ-Vault-repos.patch
+Patch100:       ciq-vaulted-repos.patch
 
 %description
 %{product_family} %{addnl_product_family} release files
@@ -239,6 +239,9 @@ exit 0
 %endif
 
 %changelog
+* Tue Jul 2 2024 Joseph S. Tate <jtate@ciq.com>
+- Base repositories now point to a public vault mirror
+
 * Thu Apr 25 2024 Joseph S. Tate <jtate@ciq.com>
 - Building CIQ-specific release for Centos Bridge updates (cbr7.9)
 - Points to CIQ mirrors for all main repos plus debuginfo
